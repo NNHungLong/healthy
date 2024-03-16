@@ -1,0 +1,9 @@
+# Ignore artifacts:
+build
+coverage
+node_modules
+dist
+.idea
+.vscode
+*.log
+.eslintrc.js
