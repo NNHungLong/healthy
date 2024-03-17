@@ -12,6 +12,7 @@ module.exports = {
   settings: { react: { version: '18.2' } },
   plugins: ['react-refresh', 'react', 'unused-imports'],
   rules: {
+    'no-console': ["error", { allow: ["warn", "error"] }],
     'react/no-unused-state': 'warn',
     'react/no-unused-prop-types': 'warn',
     'react/no-unused-prop-types': 'warn',
