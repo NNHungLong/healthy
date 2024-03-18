@@ -13,13 +13,13 @@ const Layout = ({ children }) => {
   };
 
   return (
-    <div className='min-h-screen flex flex-col'>
+    <div className='flex min-h-screen flex-col'>
       <Header />
       <div className='flex-1'>{children}</div>
       <img
         src={icon_scroll}
         alt='Scroll to top'
-        className='fixed bottom-[178px] right-8 w-12 h-12 cursor-pointer active:bg-primary-400 rounded-full transition-all duration-300 ease-in-out z-11'
+        className='z-11 fixed bottom-[178px] right-8 h-12 w-12 cursor-pointer rounded-full bg-light bg-opacity-80 transition-all duration-300 ease-in-out active:bg-primary-400'
         onClick={handleScrollToTop}
       />
       <Footer />
