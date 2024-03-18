@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
       <img
         src={icon_scroll}
         alt='Scroll to top'
-        className='fixed bottom-[178px] right-8 w-12 h-12 cursor-pointer'
+        className='fixed bottom-[178px] right-8 w-12 h-12 cursor-pointer active:bg-primary-400 rounded-full transition-all duration-300 ease-in-out z-11'
         onClick={handleScrollToTop}
       />
       <Footer />

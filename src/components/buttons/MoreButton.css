@@ -1,0 +1,8 @@
+.more-button {
+  background: linear-gradient(to bottom, #ffcc21, #ff963c);
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}

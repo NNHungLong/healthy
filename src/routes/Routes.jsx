@@ -2,11 +2,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import TopPage from '../pages/TopPage';
 import MyRecordPage from '../pages/MyRecordPage';
 import ColumnPage from '../pages/ColumnPage';
-import LoginPage from '../pages/LoginPage';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/top',
     element: <TopPage />
   },
   {
@@ -14,12 +13,8 @@ const router = createBrowserRouter([
     element: <MyRecordPage />
   },
   {
-    path: '/column',
+    path: '/',
     element: <ColumnPage />
-  },
-  {
-    path: '/login',
-    element: <LoginPage />
   }
 ]);
 

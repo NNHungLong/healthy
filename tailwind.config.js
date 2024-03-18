@@ -6,6 +6,10 @@ export default {
     extend: {
       colors: {
         ...colors
+      },
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+        hiragino: ['Hiragino Kaku Gothic Pro', 'sans-serif']
       }
     }
   },

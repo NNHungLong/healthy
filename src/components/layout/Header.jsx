@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 // components
@@ -12,7 +12,7 @@ import icon_close from 'assets/svg/icon_close.svg';
 
 const Logo = () => {
   return (
-    <NavLink to='/' className='pt-[16px] pb-[8px] pr-[19px] pl-[6px] h-full cursor-pointer'>
+    <NavLink to='/top' className='pt-[16px] pb-[8px] pr-[19px] pl-[6px] h-full cursor-pointer'>
       <img src={logo} alt='Logo' className='h-full' />
     </NavLink>
   );
@@ -48,8 +48,7 @@ const DropdownItem = ({ children, to }) => {
   return (
     <NavLink
       to={to}
-      className='flex items-center justify-start px-[32px] py-[23px] w-[280px] border-t border-t-light border-opacity-15 border-b border-b-dark-600 text-light'
-    >
+      className='header-dropdown-item flex items-center justify-start px-[32px] py-[23px] w-[280px] border-t border-t-light border-opacity-15 border-b border-b-dark-600 text-light hover:bg-primary-300'>
       {children}
     </NavLink>
   );
@@ -61,13 +60,13 @@ DropdownItem.propTypes = {
 
 const Dropdown = ({ isMenuOpen }) => {
   return (
-    <div className={`absolute right-0 top-[100%] ${isMenuOpen ? 'block' : 'hidden'}`}>
+    <div className={`absolute z-10 right-0 top-[100%] ${isMenuOpen ? 'block' : 'hidden'}`}>
       <div className='flex flex-col items-start justify-center bg-gray-400'>
         <DropdownItem to='/my-record'>自分の記録</DropdownItem>
         <DropdownItem>体重グラフ</DropdownItem>
         <DropdownItem>目標</DropdownItem>
         <DropdownItem>選択中のコース</DropdownItem>
-        <DropdownItem to='/column'>コラム一覧</DropdownItem>
+        <DropdownItem to='/'>コラム一覧</DropdownItem>
         <DropdownItem>設定</DropdownItem>
       </div>
     </div>
@@ -84,6 +83,24 @@ const Header = () => {
     setIsMenuOpen((prev) => !prev);
   };
 
+  const handleMenuClose = () => {
+    setIsMenuOpen(false);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (event.target.closest('.header-dropdown-item') || isMenuOpen) {
+        return;
+      }
+      handleMenuClose();
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <header className='bg-dark-500'>
       <div className='flex items-center justify-between h-[64px] px-[160px]'>
@@ -91,8 +108,8 @@ const Header = () => {
         <div className='relative flex items-center space-x-2 flex-row-reverse'>
           <Dropdown isMenuOpen={isMenuOpen} />
           <HamburgerIcon src={isMenuOpen ? icon_close : menu} onClick={handleMenuToggle} />
-          <HeaderItem src={info} alt='Info' text='お知らせ' to='' />
-          <HeaderItem src={challange} alt='Challenge' text='チャレンジ' to='' />
+          <HeaderItem src={info} alt='Info' text='お知らせ' />
+          <HeaderItem src={challange} alt='Challenge' text='チャレンジ' />
           <HeaderItem src={memo} alt='Memo' text='自分の記録' to='/my-record' />
         </div>
       </div>

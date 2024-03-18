@@ -7,6 +7,11 @@
   src: url('/fonts/hiragino-kaku-gothic-pro-w3.otf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Light.ttf') format('truetype');
+}
+
 body {
-  font-family: 'Hiragino Kaku Gothic Pro';
+  font-family: 'Hiragino Kaku Gothic Pro', 'Inter';
 }
