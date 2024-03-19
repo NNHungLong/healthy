@@ -34,10 +34,13 @@ EatingRecord.propTypes = {
 
 export default function EatingRecords() {
   const [eatingRecords, setEatingRecords] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const fetchEatingRecords = async () => {
+    if (loading) return;
     document.body.style.cursor = 'wait';
     document.querySelector('.more-button').style.cursor = 'wait';
+    setLoading(true);
     fetch('/api/eatingRecord')
       .then((res) => res.json())
       .then((data) => {
@@ -54,6 +57,7 @@ export default function EatingRecords() {
         console.error('Failed to load eatingRecords', err);
       })
       .finally(() => {
+        setLoading(false);
         document.body.style.cursor = 'default';
         document.querySelector('.more-button').style.cursor = 'pointer';
       });

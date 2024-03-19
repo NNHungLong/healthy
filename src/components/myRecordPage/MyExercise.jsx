@@ -33,12 +33,16 @@ MyExerciseSingleRecord.propTypes = {
 
 export default function MyExercise() {
   const [exercises, setExercises] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const fetchExercises = async () => {
     try {
+      if (loading) return;
+      setLoading(true);
       const response = await fetch('/api/exercise');
       const data = await response.json();
       setExercises(data.exercises);
+      setLoading(false);
     } catch (error) {
       console.error(error);
     }
