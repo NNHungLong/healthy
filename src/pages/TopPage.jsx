@@ -9,7 +9,7 @@ function TopPage() {
   return (
     <Layout>
       <div className='flex flex-col gap-[8px]'>
-        <div className='flex'>
+        <div className='flex flex-col md:flex-row'>
           <Achievement />
           <BodyRecord />
         </div>

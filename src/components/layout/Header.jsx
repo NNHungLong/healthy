@@ -14,7 +14,7 @@ const Logo = () => {
   return (
     <NavLink
       to='/top'
-      className='h-full cursor-pointer pb-0 pl-0 pr-0 pt-0 md:pb-[8px] md:pl-[6px] md:pr-[19px] md:pt-[16px]'>
+      className='h-full cursor-pointer py-2 pl-0 pr-0 md:pb-[8px] md:pl-[6px] md:pr-[19px] md:pt-[16px]'>
       <img src={logo} alt='Logo' className='h-full' />
     </NavLink>
   );
@@ -105,7 +105,7 @@ const Header = () => {
 
   return (
     <header className='bg-dark-500'>
-      <div className='flex h-[64px] items-center justify-between px-[30px] lg:px-[160px]'>
+      <div className='xs:px-[15px] flex h-[64px] items-center justify-between px-0 px-[20px] md:px-[80px] lg:px-[160px]'>
         <Logo />
         <div className='relative flex flex-row-reverse items-center space-x-2'>
           <Dropdown isMenuOpen={isMenuOpen} />
