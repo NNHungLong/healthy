@@ -23,6 +23,8 @@ DiarySingleRecord.propTypes = {
 export default function MyDiary() {
   const [diary, setDiary] = useState([]);
   const fetchDiary = async () => {
+    document.body.style.cursor = 'wait';
+    document.querySelector('.more-button').style.cursor = 'wait';
     fetch('/api/diary')
       .then((response) => response.json())
       .then((data) => {
@@ -39,6 +41,10 @@ export default function MyDiary() {
             return [...prev, ...newData];
           });
         }
+      })
+      .finally(() => {
+        document.body.style.cursor = 'default';
+        document.querySelector('.more-button').style.cursor = 'pointer';
       });
   };
   useLayoutEffect(() => {

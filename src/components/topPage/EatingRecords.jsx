@@ -36,6 +36,8 @@ export default function EatingRecords() {
   const [eatingRecords, setEatingRecords] = useState([]);
 
   const fetchEatingRecords = async () => {
+    document.body.style.cursor = 'wait';
+    document.querySelector('.more-button').style.cursor = 'wait';
     fetch('/api/eatingRecord')
       .then((res) => res.json())
       .then((data) => {
@@ -50,6 +52,10 @@ export default function EatingRecords() {
       })
       .catch((err) => {
         console.error('Failed to load eatingRecords', err);
+      })
+      .finally(() => {
+        document.body.style.cursor = 'default';
+        document.querySelector('.more-button').style.cursor = 'pointer';
       });
   };
   useLayoutEffect(() => {

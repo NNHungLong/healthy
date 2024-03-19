@@ -12,14 +12,12 @@ export default function makeServer({ environment = 'development' } = {}) {
     environment,
 
     models: {
-      // user: Model,
       exercise: Model,
       diary: Model,
       eatingRecord: Model
     },
 
     seeds(server) {
-      // server.create('user', { id: 1, username: 'admin', password: 'admin', name: 'Admin' });
       for (let i = 1; i <= 20; i++) {
         server.create('exercise', {
           id: i,
@@ -38,24 +36,6 @@ export default function makeServer({ environment = 'development' } = {}) {
     },
     routes() {
       this.namespace = 'api';
-      // this.get('/users', (schema) => {
-      //   return schema.users.all();
-      // });
-      // this.post('/login', (schema, request) => {
-      //   const { username, password } = JSON.parse(request.requestBody);
-      //   const user = schema.users.findBy({ username, password });
-      //   if (user) {
-      //     return {
-      //       token: 'auth-token',
-      //       user: {
-      //         id: user.id,
-      //         name: user.name
-      //       }
-      //     };
-      //   } else {
-      //     return new Response(401, {}, { error: 'Invalid credentials' });
-      //   }
-      // });
       this.get('/exercise', (schema) => {
         return schema.exercises.all();
       });
