@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const MyExerciseSingleRecord = ({ exercise }) => {
   return (
-    <div className='mr-[13px] flex h-[42px] w-1/2 flex-[40%] gap-2 border-b-2 border-gray-400 pr-[13px]'>
+    <div className='mr-[13px] flex h-[42px] w-[calc(100%-15px)] flex-none gap-2 border-b-2 border-gray-400 pr-[13px] md:flex-[40%]'>
       <div className='flex flex-col items-center justify-center'>
         <p className='flex flex-1 items-center justify-center text-[7px]'>●</p>
         <p className='flex-1'></p>
