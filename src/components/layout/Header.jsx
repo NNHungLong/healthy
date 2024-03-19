@@ -14,7 +14,8 @@ const Logo = () => {
   return (
     <NavLink
       to='/top'
-      className='h-full cursor-pointer py-2 pl-0 pr-0 md:pb-[8px] md:pl-[6px] md:pr-[19px] md:pt-[16px]'>
+      className='h-full cursor-pointer py-2 pl-0 pr-0 md:pb-[8px] md:pl-[6px] md:pr-[19px] md:pt-[16px]'
+    >
       <img src={logo} alt='Logo' className='h-full' />
     </NavLink>
   );
@@ -50,7 +51,8 @@ const DropdownItem = ({ children, to }) => {
   return (
     <NavLink
       to={to}
-      className='header-dropdown-item flex w-[280px] items-center justify-start border-b border-t border-b-dark-600 border-t-light border-opacity-15 px-[32px] py-[23px] text-light hover:bg-primary-300'>
+      className='header-dropdown-item flex w-[280px] items-center justify-start border-b border-t border-b-dark-600 border-t-light border-opacity-15 px-[32px] py-[23px] text-light hover:bg-primary-300'
+    >
       {children}
     </NavLink>
   );

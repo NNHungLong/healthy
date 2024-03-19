@@ -9,7 +9,8 @@ function ThumbNail({ href, src, alt, title, description, imgClassName }) {
   return (
     <a
       href={href}
-      className='relative flex h-[288px] w-[288px] flex-col items-center justify-center overflow-hidden border-[24px] border-primary-300'>
+      className='relative flex h-[288px] w-[288px] flex-col items-center justify-center overflow-hidden border-[24px] border-primary-300'
+    >
       <div className='z-1 absolute flex h-[240px] w-[240px]'>
         <img src={src} alt={alt} className={`object-cover object-left grayscale ${imgClassName}`} />
       </div>
