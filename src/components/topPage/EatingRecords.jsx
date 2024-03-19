@@ -58,11 +58,12 @@ export default function EatingRecords() {
   }, []);
   return (
     <>
-      <div className='flex flex-row flex-wrap justify-start gap-8'>
-        {eatingRecords?.length &&
-          eatingRecords.map((record, index) => <EatingRecord key={index} record={record} />)}
+      <div className='flex flex-row flex-wrap justify-start gap-8 px-4 xl:px-32 2xl:px-[14%]'>
+        {eatingRecords?.length
+          ? eatingRecords.map((record, index) => <EatingRecord key={index} record={record} />)
+          : null}
       </div>
-      <MoreButton className='mt-6 w-[288px] self-center' onClick={fetchEatingRecords}>
+      <MoreButton className='mb-10 mt-6 w-[288px] self-center' onClick={fetchEatingRecords}>
         記録をもっと見る
       </MoreButton>
     </>

@@ -1,12 +1,18 @@
 import Layout from 'components/layout/Layout';
 
+import Achievement from '../components/topPage/Achievement';
+import BodyRecord from '../components/topPage/BodyRecord';
 import FilterButtons from '../components/topPage/FilterButtons';
 import EatingRecords from '../components/topPage/EatingRecords';
 
 function TopPage() {
   return (
     <Layout>
-      <div className='flex flex-col gap-[8px] px-4 py-12 xl:px-32 2xl:px-[14%]'>
+      <div className='flex flex-col gap-[8px]'>
+        <div className='flex'>
+          <Achievement />
+          <BodyRecord />
+        </div>
         <FilterButtons />
         <EatingRecords />
       </div>

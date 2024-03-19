@@ -50,7 +50,7 @@ export default function MyExercise() {
   return (
     <div id='my-exercise' className='flex flex-col bg-dark-500 px-6 py-4 font-inter text-light'>
       <div className='flex items-center'>
-        <h2 className='mr-4 w-[96px] text-lg font-light leading-snug'>MY EXERCISE</h2>
+        <h2 className='mr-4 w-[96px] font-light leading-snug'>MY EXERCISE</h2>
         <h2 className='text-xl'>2021.05.21</h2>
       </div>
       <div className='scrollbar mt-2 flex h-[192px] flex-wrap gap-2 overflow-auto pr-3'>

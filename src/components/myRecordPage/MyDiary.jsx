@@ -48,12 +48,19 @@ export default function MyDiary() {
     <div id='my-diary' className='flex flex-col text-dark-500'>
       <h2 className='font-inter text-xl font-light'>MY DIARY</h2>
       <div className='flex flex-wrap items-center justify-start gap-8'>
-        {diary?.length &&
-          diary.map(({ id, date, time, title, content }) => {
-            return (
-              <DiarySingleRecord key={id} date={date} time={time} title={title} content={content} />
-            );
-          })}
+        {diary?.length
+          ? diary.map(({ id, date, time, title, content }) => {
+              return (
+                <DiarySingleRecord
+                  key={id}
+                  date={date}
+                  time={time}
+                  title={title}
+                  content={content}
+                />
+              );
+            })
+          : null}
       </div>
       <MoreButton className='mt-6 w-[288px] self-center' onClick={fetchDiary}>
         記録をもっと見る
