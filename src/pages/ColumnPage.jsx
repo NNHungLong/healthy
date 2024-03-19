@@ -5,7 +5,7 @@ import Articles from '../components/columnPage/Articles';
 function ColumnPage() {
   return (
     <Layout>
-      <div className='flex flex-col py-12 px-4 xl:px-32 2xl:px-[14%]'>
+      <div className='flex flex-col px-4 py-12 xl:px-32 2xl:px-[14%]'>
         <Packages />
         <Articles />
       </div>

@@ -85,12 +85,12 @@ const Articles = () => {
   };
   return (
     <>
-      <div className='flex flex-wrap gap-8 mt-8 items-center justify-center'>
+      <div className='mt-8 flex flex-wrap items-center justify-center gap-8'>
         {articles.map((article) => (
           <div key={article.id} className='article-cell w-[234px]'>
-            <div className='relative w-full h-[144px] overflow-hidden'>
+            <div className='relative h-[144px] w-full overflow-hidden'>
               <ArticleThumbnail article={article} />
-              <div className='absolute bottom-0 left-0 text-light bg-primary-300 px-[8px] py-[3px] text-xs'>
+              <div className='absolute bottom-0 left-0 bg-primary-300 px-[8px] py-[3px] text-xs text-light'>
                 {article.date}
               </div>
             </div>
@@ -105,7 +105,7 @@ const Articles = () => {
           </div>
         ))}
       </div>
-      <div className='flex justify-center items-center mt-8'>
+      <div className='mt-8 flex items-center justify-center'>
         <MoreButton className='w-[256px]' onClick={handleMoreClick}>
           もっと見る
         </MoreButton>

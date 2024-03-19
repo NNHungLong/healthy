@@ -37,22 +37,22 @@ const LoginPage = () => {
 
   return (
     <div className='sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5'>
-      <h1 className='text-2xl font-bold mb-4'>Login Page</h1>
+      <h1 className='mb-4 text-2xl font-bold'>Login Page</h1>
       <form onSubmit={handleSubmit}>
-        <label className='block mb-2'>
+        <label className='mb-2 block'>
           Username:
           <input
-            className='border border-gray-300 rounded-md px-3 py-2 w-full'
+            className='w-full rounded-md border border-gray-300 px-3 py-2'
             type='text'
             value={username}
             onChange={handleUsernameChange}
           />
         </label>
         <br />
-        <label className='block mb-2'>
+        <label className='mb-2 block'>
           Password:
           <input
-            className='border border-gray-300 rounded-md px-3 py-2 w-full'
+            className='w-full rounded-md border border-gray-300 px-3 py-2'
             type='password'
             value={password}
             onChange={handlePasswordChange}
@@ -60,7 +60,7 @@ const LoginPage = () => {
         </label>
         <br />
         <button
-          className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+          className='rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700'
           type='submit'
         >
           Login

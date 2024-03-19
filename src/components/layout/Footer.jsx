@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 const FooterItem = ({ children }) => {
-  return <div className='text-light font-light text-sm'>{children}</div>;
+  return <div className='text-sm font-light text-light'>{children}</div>;
 };
 const Footer = () => {
   return (
-    <footer className='bg-dark-500 min-h-[128px] flex items-center justify-start gap-20 pl-[10%]'>
+    <footer className='flex min-h-[128px] items-center justify-start gap-20 bg-dark-500 pl-[10%]'>
       <FooterItem>会員登録</FooterItem>
       <FooterItem>運営会社</FooterItem>
       <FooterItem>利用規約</FooterItem>

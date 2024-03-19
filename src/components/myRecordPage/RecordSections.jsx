@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import './RecordSections.css';
 
+// components
 import BodyRecord from '../../assets/imgs/MyRecommend-1.jpg';
 import MyExercise from '../../assets/imgs/MyRecommend-2.jpg';
 import MyDiary from '../../assets/imgs/MyRecommend-3.jpg';

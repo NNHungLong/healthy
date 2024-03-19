@@ -15,3 +15,16 @@
 body {
   font-family: 'Hiragino Kaku Gothic Pro', 'Inter';
 }
+
+.scrollbar::-webkit-scrollbar {
+  width: 8px; /* width of the entire scrollbar */
+}
+.scrollbar::-webkit-scrollbar-track {
+  background: hsl(0, 0%, 47%); /* color of the tracking area */
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: hsl(46, 100%, 56%); /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid hsl(46, 100%, 56%); /* creates padding around scroll thumb */
+  padding: 8px;
+}

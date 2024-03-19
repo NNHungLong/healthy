@@ -12,7 +12,7 @@ import icon_close from 'assets/svg/icon_close.svg';
 
 const Logo = () => {
   return (
-    <NavLink to='/top' className='pt-[16px] pb-[8px] pr-[19px] pl-[6px] h-full cursor-pointer'>
+    <NavLink to='/top' className='h-full cursor-pointer pb-[8px] pl-[6px] pr-[19px] pt-[16px]'>
       <img src={logo} alt='Logo' className='h-full' />
     </NavLink>
   );
@@ -20,8 +20,8 @@ const Logo = () => {
 
 const HeaderItem = ({ src, alt, text, imgClassName, to }) => {
   return (
-    <NavLink to={to} className={`flex items-center justify-center cursor-pointer w-[160px] gap-2`}>
-      <img src={src} alt={alt} className={`w-8 h-8 ${imgClassName}`} />
+    <NavLink to={to} className={`flex w-[160px] cursor-pointer items-center justify-center gap-2`}>
+      <img src={src} alt={alt} className={`h-8 w-8 ${imgClassName}`} />
       <span className='text-light'>{text}</span>
     </NavLink>
   );
@@ -35,8 +35,8 @@ HeaderItem.propTypes = {
 };
 const HamburgerIcon = ({ src, onClick }) => {
   return (
-    <span className='flex items-center justify-center cursor-pointer ml-8' onClick={onClick}>
-      <img src={src} alt='Menu' className='w-8 h-8' />
+    <span className='ml-8 flex cursor-pointer items-center justify-center' onClick={onClick}>
+      <img src={src} alt='Menu' className='h-8 w-8' />
     </span>
   );
 };
@@ -48,7 +48,8 @@ const DropdownItem = ({ children, to }) => {
   return (
     <NavLink
       to={to}
-      className='header-dropdown-item flex items-center justify-start px-[32px] py-[23px] w-[280px] border-t border-t-light border-opacity-15 border-b border-b-dark-600 text-light hover:bg-primary-300'>
+      className='header-dropdown-item flex w-[280px] items-center justify-start border-b border-t border-b-dark-600 border-t-light border-opacity-15 px-[32px] py-[23px] text-light hover:bg-primary-300'
+    >
       {children}
     </NavLink>
   );
@@ -60,7 +61,7 @@ DropdownItem.propTypes = {
 
 const Dropdown = ({ isMenuOpen }) => {
   return (
-    <div className={`absolute z-10 right-0 top-[100%] ${isMenuOpen ? 'block' : 'hidden'}`}>
+    <div className={`absolute right-0 top-[100%] z-10 ${isMenuOpen ? 'block' : 'hidden'}`}>
       <div className='flex flex-col items-start justify-center bg-gray-400'>
         <DropdownItem to='/my-record'>自分の記録</DropdownItem>
         <DropdownItem>体重グラフ</DropdownItem>
@@ -103,9 +104,9 @@ const Header = () => {
 
   return (
     <header className='bg-dark-500'>
-      <div className='flex items-center justify-between h-[64px] px-[160px]'>
+      <div className='flex h-[64px] items-center justify-between px-[160px]'>
         <Logo />
-        <div className='relative flex items-center space-x-2 flex-row-reverse'>
+        <div className='relative flex flex-row-reverse items-center space-x-2'>
           <Dropdown isMenuOpen={isMenuOpen} />
           <HamburgerIcon src={isMenuOpen ? icon_close : menu} onClick={handleMenuToggle} />
           <HeaderItem src={info} alt='Info' text='お知らせ' />

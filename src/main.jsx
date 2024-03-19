@@ -5,8 +5,8 @@ import './index.css';
 
 // fake APIs in development
 import makeServer from './fakeAPIs/index';
-if (import.meta.env.NODE_ENV === 'development') {
-  makeServer({ environment: 'development' });
+if (import.meta.env.DEV) {
+  makeServer();
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(

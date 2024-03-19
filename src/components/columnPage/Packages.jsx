@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 const Package = ({ title, desc }) => {
   return (
-    <div className='bg-dark-600 text-center px-4 py-6'>
-      <div className='font-inter w-[200px] text-primary-300 uppercase text-wrap text-2xl font-medium'>
+    <div className='bg-dark-600 px-4 py-6 text-center'>
+      <div className='w-[200px] text-wrap font-inter text-2xl font-medium uppercase text-primary-300'>
         {title}
       </div>
-      <div className='w-1/3 mx-auto my-1 border-b border-light'></div>
+      <div className='mx-auto my-1 w-1/3 border-b border-light'></div>
       <div className='text-light'>{desc}</div>
     </div>
   );
