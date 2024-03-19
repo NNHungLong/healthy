@@ -45,7 +45,7 @@ export default function MyDiary() {
     fetchDiary();
   }, []);
   return (
-    <div className='flex flex-col text-dark-500'>
+    <div id='my-diary' className='flex flex-col text-dark-500'>
       <h2 className='font-inter text-xl font-light'>MY DIARY</h2>
       <div className='flex flex-wrap items-center justify-start gap-8'>
         {diary?.length &&

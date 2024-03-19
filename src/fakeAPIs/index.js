@@ -1,4 +1,7 @@
 import { createServer, Model } from 'miragejs';
+import eatingRecord from './dummyData/eatingRecords';
+import diary from './dummyData/diary';
+import exercise from './dummyData/exercise';
 
 export default function makeServer({ environment = 'development' } = {}) {
   let server = createServer({
@@ -7,7 +10,8 @@ export default function makeServer({ environment = 'development' } = {}) {
     models: {
       // user: Model,
       exercise: Model,
-      diary: Model
+      diary: Model,
+      eatingRecord: Model
     },
 
     seeds(server) {
@@ -15,23 +19,19 @@ export default function makeServer({ environment = 'development' } = {}) {
       for (let i = 1; i <= 20; i++) {
         server.create('exercise', {
           id: i,
-          date: '2021.05.21',
-          exercise: '家事全般（立位・軽い）',
-          energySpent: '26kcal',
-          duration: '10 min'
+          ...exercise
         });
       }
       for (let i = 1; i <= 8; i++) {
-        server.create('diary', {
-          date: '2021.05.21',
-          time: '23:25',
-          title: '私の日記の記録が一部表示されます。',
-          content:
-            'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト…'
-        });
+        server.create('diary', diary);
       }
+      eatingRecord.forEach((record, index) => {
+        server.create('eatingRecord', {
+          id: index + 1,
+          ...record
+        });
+      });
     },
-
     routes() {
       this.namespace = 'api';
       // this.get('/users', (schema) => {
@@ -57,6 +57,9 @@ export default function makeServer({ environment = 'development' } = {}) {
       });
       this.get('/diary', (schema) => {
         return schema.diaries.all();
+      });
+      this.get('/eatingRecord', (schema) => {
+        return schema.eatingRecords.all();
       });
     }
   });
