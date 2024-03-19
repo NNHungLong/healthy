@@ -1,0 +1,22 @@
+Working timeline (Nguyen Ngoc Hung Long): 
+
+15/3: 17:07 -> 17:45: Read the requirements.
+16/3: 10:30 - 12:00: first commit - setup project
+16/3: 15:00 - 17:00: install fake apis, state management, linter, styles and husky
+16/3: 20:00 - 23:00: routes, navigation, login page, axios, api calls
+
+17/3: 11:00 - 14:00: Layout, Header, Footer, Fonts, Mobx, state management
+17/3: 21:00 - 22:00: Layout, Header, Scroll to top Icon
+17/3: 22:30 - 23:30: Layout, Header, navigation, Hamburger Icon, Dropdown
+17/3: 23:30 - 23:59: Commit to github, fix linter and prettier configuation
+
+18/3: 10:00 - 11:00: Install Inter font, fix navigation.
+18/3: 15:00 - 17:00: Column page, Inter font.
+18/3: 20:00 - 21:20: My Record page - RecordSections & Thumbnails
+
+19/3: 9:00 - 12:00: My Record page, top page. My record page - scroll to section, fake APIs
+19/3: 14:00 - 17:00: Top Page: Achievement, Body Record Chart
+19/3: 20:00 - 21:40: Body Record Chart, fake APIs, Body Record Chart on My Record page
+
+Because of React Strict Mode, some APIs will fetch data twice. This is useful to detect side effects in development and doesn't effect the production build.
+To disable Strict Mode, remove the <React.StrictMode> tags from main.jsx

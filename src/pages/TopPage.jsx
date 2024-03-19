@@ -1,7 +1,7 @@
 import Layout from 'components/layout/Layout';
 
 import Achievement from '../components/topPage/Achievement';
-import BodyRecord from '../components/topPage/BodyRecord';
+import BodyRecord from '../components/common/BodyRecord';
 import FilterButtons from '../components/topPage/FilterButtons';
 import EatingRecords from '../components/topPage/EatingRecords';
 

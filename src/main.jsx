@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import ReactDOM from 'react-dom/client';
 import AppRoutes from './routes/Routes';
 import './index.css';
@@ -10,7 +10,9 @@ if (import.meta.env.DEV) {
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <AppRoutes />
-  </React.StrictMode>
+  <AppRoutes />
+  // use React.StrictMode to detect side effect in development - it is commented for submission only!
+  // <React.StrictMode>
+  //   <AppRoutes />
+  // </React.StrictMode>
 );

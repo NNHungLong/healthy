@@ -58,7 +58,7 @@ export default function EatingRecords() {
   }, []);
   return (
     <>
-      <div className='flex flex-row flex-wrap justify-start gap-8 px-4 xl:px-32 2xl:px-[14%]'>
+      <div className='flex flex-row flex-wrap justify-center gap-8 px-4 xl:px-32 2xl:px-[14%]'>
         {eatingRecords?.length
           ? eatingRecords.map((record, index) => <EatingRecord key={index} record={record} />)
           : null}

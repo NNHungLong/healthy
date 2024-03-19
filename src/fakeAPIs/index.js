@@ -2,6 +2,10 @@ import { createServer, Model } from 'miragejs';
 import eatingRecord from './dummyData/eatingRecords';
 import diary from './dummyData/diary';
 import exercise from './dummyData/exercise';
+import bodyRecordByYear from './dummyData/bodyRecordByYear';
+import bodyRecordByMonth from './dummyData/bodyRecordByMonth';
+import bodyRecordByWeek from './dummyData/bodyRecordByWeek';
+import bodyRecordByDay from './dummyData/bodyRecordByDay';
 
 export default function makeServer({ environment = 'development' } = {}) {
   let server = createServer({
@@ -60,6 +64,18 @@ export default function makeServer({ environment = 'development' } = {}) {
       });
       this.get('/eatingRecord', (schema) => {
         return schema.eatingRecords.all();
+      });
+      this.get('/bodyRecord/year', () => {
+        return bodyRecordByYear;
+      });
+      this.get('/bodyRecord/month', () => {
+        return bodyRecordByMonth;
+      });
+      this.get('/bodyRecord/week', () => {
+        return bodyRecordByWeek;
+      });
+      this.get('/bodyRecord/day', () => {
+        return bodyRecordByDay;
       });
     }
   });

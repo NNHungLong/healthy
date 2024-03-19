@@ -36,7 +36,7 @@ export default function RecordSections() {
   return (
     <div className='flex items-center justify-center gap-8'>
       <ThumbNail
-        href='#my-body-record'
+        href='#body-record'
         src={BodyRecord}
         alt='Body Record'
         title='BODY RECORD'
