@@ -12,7 +12,9 @@ import icon_close from 'assets/svg/icon_close.svg';
 
 const Logo = () => {
   return (
-    <NavLink to='/top' className='h-full cursor-pointer pb-[8px] pl-[6px] pr-[19px] pt-[16px]'>
+    <NavLink
+      to='/top'
+      className='h-full cursor-pointer pb-0 pl-0 pr-0 pt-0 md:pb-[8px] md:pl-[6px] md:pr-[19px] md:pt-[16px]'>
       <img src={logo} alt='Logo' className='h-full' />
     </NavLink>
   );
@@ -48,8 +50,7 @@ const DropdownItem = ({ children, to }) => {
   return (
     <NavLink
       to={to}
-      className='header-dropdown-item flex w-[280px] items-center justify-start border-b border-t border-b-dark-600 border-t-light border-opacity-15 px-[32px] py-[23px] text-light hover:bg-primary-300'
-    >
+      className='header-dropdown-item flex w-[280px] items-center justify-start border-b border-t border-b-dark-600 border-t-light border-opacity-15 px-[32px] py-[23px] text-light hover:bg-primary-300'>
       {children}
     </NavLink>
   );
@@ -104,7 +105,7 @@ const Header = () => {
 
   return (
     <header className='bg-dark-500'>
-      <div className='flex h-[64px] items-center justify-between px-[160px]'>
+      <div className='flex h-[64px] items-center justify-between px-[30px] lg:px-[160px]'>
         <Logo />
         <div className='relative flex flex-row-reverse items-center space-x-2'>
           <Dropdown isMenuOpen={isMenuOpen} />

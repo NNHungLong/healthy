@@ -9,15 +9,18 @@ function ThumbNail({ href, src, alt, title, description, imgClassName }) {
   return (
     <a
       href={href}
-      className=' relative flex h-[288px] w-[288px] flex-col items-center justify-center border-[24px] border-primary-300'
-    >
+      className='relative flex h-[288px] w-[288px] flex-col items-center justify-center overflow-hidden border-[24px] border-primary-300'>
       <div className='z-1 absolute flex h-[240px] w-[240px]'>
         <img src={src} alt={alt} className={`object-cover object-left grayscale ${imgClassName}`} />
       </div>
       <div className='z-1 absolute flex h-[240px] w-[240px] bg-dark-600 opacity-70'></div>
       <div className='z-2 absolute flex flex-col items-center'>
-        <div className='font-inter text-2xl font-semibold text-primary-300'>{title}</div>
-        <div className='mt-2 bg-primary-400 px-4 py-[2px] text-sm text-light'>{description}</div>
+        <div className='text-center font-inter text-2xl font-semibold text-primary-300'>
+          {title}
+        </div>
+        <div className='mt-2 bg-primary-400 px-4 py-[2px] text-center text-sm text-light'>
+          {description}
+        </div>
       </div>
     </a>
   );
