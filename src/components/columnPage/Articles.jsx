@@ -107,7 +107,7 @@ const Articles = () => {
       </div>
       <div className='mt-8 flex items-center justify-center'>
         <MoreButton className='w-[256px]' onClick={handleMoreClick}>
-          もっと見る
+          コラムをもっと見る
         </MoreButton>
       </div>
     </>

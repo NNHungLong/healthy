@@ -63,7 +63,7 @@ export default function MyDiary() {
           : null}
       </div>
       <MoreButton className='mt-6 w-[288px] self-center' onClick={fetchDiary}>
-        記録をもっと見る
+        自分の日記をもっと見る
       </MoreButton>
     </div>
   );
